@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Parisienne', cursive;
+  font-size: 5em;
+}
+
+/* NAV */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: brown;
+  color: white;
+}
+
+nav button {
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  margin-right: 2rem; 
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+}
+
+.Item {
+  margin: 1rem 2rem;
+}
+
+.Painting {
+  padding: 150px 100px;
+  border: 2px red solid;
+  border-radius: 5px;
+}
+
+.Item-Details {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.Item-Details h1, p {
+  padding: 0.25rem 0;
+}
+
+.Item-Details button {
+  width: 5rem;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: gray;
+  color: white;
+  align-self: flex-end;
+}
