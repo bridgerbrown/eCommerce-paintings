@@ -12,18 +12,21 @@ function Shop() {
                 setSearch(data.data.map(item => {
                     return {
                         id: item.id,
-                        api_link: item.api_link
+                        api_link: item.api_link,
+                        thumbnail: item.thumbnail
                     }
                 }))
             })
     }, [] )
 
 const paintingComponents = search.map((painting) => {
-    return <Item 
-            link={painting.api_link}
-            id={painting.id}
-            key={painting.id}
-            />
+    if(painting.thumbnail) {
+        return <Item 
+                link={painting.api_link}
+                id={painting.id}
+                key={painting.id}
+                />
+    }
 })
 
     return(

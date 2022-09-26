@@ -35,13 +35,15 @@ function Item(props) {
         <div className='Item'>
             <img src={getImageUrl()} alt={paintings.title} />
             <div className='Item-Details'>
-                <h4>{paintings.title}</h4>
-                <p>{paintings.artist}</p>
-                <div className='Item-Btns'>
-                    <button className='InfoBtn'>Info</button>
-                    <button className='AddCartBtn'>Add to cart</button>
+                <div>
+                    <h4>{paintings.title}</h4>
+                    <p>{paintings.artist}</p>
+                    <h3>$1,000,000</h3>
                 </div>
-                
+            </div>
+            <div className='Item-Btns'>
+                <button className='AddCartBtn'>Add to cart</button>
+                <button className='InfoBtn'>More Info</button>
             </div>
         </div>
     
