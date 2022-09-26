@@ -49,6 +49,7 @@ main {
 
 .Item {
   margin: 1.5rem 2rem;
+  border: 1px solid red;
 }
 
 .Painting {

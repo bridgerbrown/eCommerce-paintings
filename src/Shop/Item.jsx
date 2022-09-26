@@ -5,7 +5,8 @@ function Item(props) {
     const [paintings, setPaintings] = useState({})
     const [apiConfig, setApiConfig] = useState("")
 
-    fetch(`${props.link}`)
+    useEffect(() => {
+        fetch(`${props.link}`)
         .then(res => res.json())
         .then(data => {
             setPaintings( paintings => ({
@@ -18,7 +19,8 @@ function Item(props) {
                 })
             )
             setApiConfig(data.config.iiif_url)
-    })
+        })
+    }, [paintings])
 
 
     function getImageUrl() {
@@ -29,20 +31,26 @@ function Item(props) {
         return url
     }
 
+    const itemElement = 
+        <div className='Item'>
+            <img src={getImageUrl()} alt={paintings.title} />
+            <div className='Item-Details'>
+                <h4>{paintings.title}</h4>
+                <p>{paintings.artist}</p>
+                <div className='Item-Btns'>
+                    <button className='InfoBtn'>Info</button>
+                    <button className='AddCartBtn'>Add to cart</button>
+                </div>
+                
+            </div>
+        </div>
+    
+
 
     return(
-            <div className='Item'>
-                <img src={getImageUrl()} alt={paintings.title} />
-                <div className='Item-Details'>
-                    <h4>{paintings.title}</h4>
-                    <p>{paintings.artist}</p>
-                    <div className='Item-Btns'>
-                        <button className='InfoBtn'>Info</button>
-                        <button className='AddCartBtn'>Add to cart</button>
-                    </div>
-                    
-                </div>
-            </div>
+        <div>
+            {paintings.image_id && itemElement}
+        </div>
     )
 }
 

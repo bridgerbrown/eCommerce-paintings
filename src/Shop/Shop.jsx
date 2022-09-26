@@ -29,7 +29,7 @@ const paintingComponents = search.map((painting) => {
     return(
         <div className="Container">
             <main>
-                {paintingComponents}
+                { search && paintingComponents}
             </main>
         </div>
     )
