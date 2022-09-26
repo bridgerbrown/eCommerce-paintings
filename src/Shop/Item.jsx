@@ -5,23 +5,20 @@ function Item(props) {
     const [paintings, setPaintings] = useState({})
     const [apiConfig, setApiConfig] = useState("")
 
-    useEffect(() => {
-        fetch(`${props.link}`)
-            .then(res => res.json())
-            .then(data => {
-                setPaintings(data.data.map(item => {
-                    return {
-                        id: item.id,
-                        title: item.title,
-                        date: item.date_display,
-                        origin: item.place_of_origin,
-                        artist: item.artist_title,
-                        image_id: item.image_id
-                    }
-                }))
-                setApiConfig(data.config.iiif_url)    
-        })
-    }, [])
+    fetch(`${props.link}`)
+        .then(res => res.json())
+        .then(data => {
+            setPaintings( paintings => ({
+                    id: data.data.id,
+                    title: data.data.title,
+                    date: data.data.date_display,
+                    origin: data.data.place_of_origin,
+                    artist: data.data.artist_title,
+                    image_id: data.data.image_id
+                })
+            )
+            setApiConfig(data.config.iiif_url)
+    })
 
 
     function getImageUrl() {
