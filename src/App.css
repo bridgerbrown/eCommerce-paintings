@@ -31,6 +31,10 @@ nav button {
   margin-right: 2rem; 
 }
 
+nav span {
+  width: 61.9px;
+}
+
 /* ------------------ SHOP ------------------ */
 
 .Container {
@@ -124,5 +128,31 @@ h4 {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+/* ------------------ Loading... ------------------ */
+
+#Loaded {
+  display: flex;
+  position: absolute;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 75vh;
+}
+
+@keyframes loadingAnimation {
+  0%   {color: transparent}
+  50% {color: black}
+  100%   {color: transparent}
+}
+
+#Loaded h1 {
+  animation-name: loadingAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: 4;
+  font-size: 4em;
 }
 
