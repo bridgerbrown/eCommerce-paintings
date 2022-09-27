@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Shop from './Shop/Shop'
 import Navbar from './Navbar'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   
@@ -9,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Shop />
+      <Outlet />
     </div>
   )
 }

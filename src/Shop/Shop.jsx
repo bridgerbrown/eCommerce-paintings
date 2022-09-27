@@ -2,6 +2,7 @@ import {React, useState, useEffect} from "react";
 import '../App.css'
 import Item from "./Item";
 import ItemPage from "../ItemPage";
+import { Outlet } from "react-router-dom"
 
 function Shop() {
     const [search, setSearch] = useState([])
@@ -29,6 +30,11 @@ function moreInfo(value) {
     console.log(paintingInfo)
 }
 
+function backFromInfo() {
+    setPaintingInfo({})
+    setInfoPage(false)
+}
+
 const paintingComponents = search.map((painting) => {
     if(painting.thumbnail) {
         return <Item 
@@ -36,6 +42,7 @@ const paintingComponents = search.map((painting) => {
                 id={painting.id}
                 key={painting.id}
                 moreInfo={moreInfo}
+                backFromInfo={backFromInfo}
                 />
     }
 })
@@ -47,12 +54,12 @@ const paintingComponents = search.map((painting) => {
                 </div>
                 
                 { search && 
-                    <main>{
+                    <main className="Shop-Page" id="Main-Container">{
                         !infoPage ?
                             paintingComponents :
                             <ItemPage 
                                 paintingInfo={paintingInfo} 
-                            />
+                            ><Outlet/></ItemPage>
                         }
                     </main>
                 }

@@ -14,7 +14,7 @@ button {
 
 /* ------------------ NAV ------------------ */
 
-nav {
+.Top-Nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,6 +22,36 @@ nav {
   padding-bottom: 1.5rem;
   background-color: brown;
   color: white;
+}
+
+.Bottom-Nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: brown;
+  width: 100vw;
+  border: 1px solid rgba(255, 255, 255, 0.184);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  opacity: 0.9;
+  text-decoration: none;
+  font-family: 'Parisienne', cursive;
+  font-size: 1.5em;
+  text-transform: none;
+  margin: -1px -0.5px;
+  padding: 0.5rem 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.184);
 }
 
 nav button {
@@ -42,13 +72,39 @@ nav span {
   margin: 0 auto;
 }
 
-main {
+.Shop-Page {
   display: grid;
   grid-template-columns: 30vw 30vw 30vw;
   grid-template-rows: 500px 500px 500px 500px;
   column-gap: 10px;
   row-gap: 10px;
   margin: 4rem auto;
+}
+
+/* ------------------ Loading... ------------------ */
+
+#Loaded {
+  display: flex;
+  position: absolute;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 75vh;
+}
+
+@keyframes loadingAnimation {
+  0%   {color: transparent}
+  50% {color: black}
+  100%   {color: transparent}
+}
+
+#Loaded h1 {
+  animation-name: loadingAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: 4;
+  font-size: 4em;
 }
 
 /* ------------------ Paintings ------------------ */
@@ -130,29 +186,23 @@ h4 {
   width: 100%;
 }
 
-/* ------------------ Loading... ------------------ */
+/* ------------------ MORE INFO PAGE ------------------ */
 
-#Loaded {
+.Info-Page {
   display: flex;
-  position: absolute;
-  left: 0;
+  margin: 4rem auto;
+}
+
+.SelectedItem {
+  display: flex;
+}
+
+.SelectedItem img {
+  max-width: 45vw;
+}
+
+.SelectedItemDetails {
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 75vh;
+  width: 45%;
 }
-
-@keyframes loadingAnimation {
-  0%   {color: transparent}
-  50% {color: black}
-  100%   {color: transparent}
-}
-
-#Loaded h1 {
-  animation-name: loadingAnimation;
-  animation-duration: 1s;
-  animation-iteration-count: 4;
-  font-size: 4em;
-}
-
