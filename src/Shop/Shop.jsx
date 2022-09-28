@@ -58,7 +58,8 @@ const paintingComponents = search.map((painting) => {
                         !infoPage ?
                             paintingComponents :
                             <ItemPage 
-                                paintingInfo={paintingInfo} 
+                                paintingInfo={paintingInfo}
+                                backFromInfo={backFromInfo} 
                             ><Outlet/></ItemPage>
                         }
                     </main>
